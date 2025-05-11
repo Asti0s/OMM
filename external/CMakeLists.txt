@@ -43,30 +43,11 @@ if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/donut)
 	set_property(TARGET glfw PROPERTY FOLDER "External")
 endif()
 
-# GLM
-add_subdirectory("glm")
-set_property(TARGET glm PROPERTY FOLDER "External") 
-
-if(BUILD_STATIC_LIBS)
-	set_property(TARGET glm_static PROPERTY FOLDER "External") 
-endif()
-
-if(BUILD_SHARED_LIBS)
-	set_property(TARGET glm_shared PROPERTY FOLDER "External") 
-endif()
-
 # lz4
 set(LZ4_BUILD_CLI OFF)
 set(LZ4_BUILD_LEGACY_LZ4C OFF)
 add_subdirectory("lz4/build/cmake")
 set_property(TARGET lz4_static PROPERTY FOLDER "External") 
-
-# ShaderMake
-if (NOT TARGET ShaderMake)
-    add_subdirectory("ShaderMake")
-    set_property(TARGET ShaderMake PROPERTY FOLDER "External") 
-    set_property(TARGET ShaderMakeBlob PROPERTY FOLDER "External")
-endif()
 
 # xxHash
 set(XXHASH_BUILD_XXHSUM OFF)
@@ -83,11 +64,6 @@ if (TARGET lz4)
 endif()
 if (TARGET lz4_static)
 	set_property(TARGET lz4_static PROPERTY FOLDER "External") 
-endif()
-
-if (TARGET ShaderMake)
-    set_property(TARGET ShaderMake PROPERTY FOLDER "External") 
-    set_property(TARGET ShaderMakeBlob PROPERTY FOLDER "External")
 endif()
 
 # nvrhi

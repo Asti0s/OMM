@@ -13,15 +13,9 @@
 [submodule "thirdparty/imgui-filebrowser"]
 	path = external/imgui-filebrowser
 	url = https://github.com/AirGuanZ/imgui-filebrowser.git
-[submodule "external/glm"]
-	path = external/glm
-	url = https://github.com/g-truc/glm.git
 [submodule "external/donut"]
 	path = external/donut
 	url = https://github.com/NVIDIA-RTX/Donut.git
 [submodule "external/lz4"]
 	path = external/lz4
 	url = https://github.com/lz4/lz4.git
-[submodule "external/ShaderMake"]
-	path = external/ShaderMake
-	url = https://github.com/NVIDIA-RTX/ShaderMake.git
