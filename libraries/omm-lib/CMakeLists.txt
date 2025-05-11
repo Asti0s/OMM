@@ -7,21 +7,15 @@
 # license agreement from NVIDIA CORPORATION is strictly prohibited.
 cmake_minimum_required(VERSION 3.12)
 
-if (WIN32)
-    set(DXIL_DEFAULT ON)
-else()
-    set(DXIL_DEFAULT OFF)
-endif()
-
 option(OMM_DISABLE_INTERPROCEDURAL_OPTIMIZATION "disable interprocedural optimization" OFF)
 option(OMM_ENABLE_OPENMP "enable openmp" ON)
-option(OMM_ENABLE_PRECOMPILED_SHADERS_DXIL "Embedded precompiled DXIL shaders. Require path to dxc.exe (normally located in Window SDK)." ${DXIL_DEFAULT})
-option(OMM_ENABLE_PRECOMPILED_SHADERS_SPIRV "Embedded precompiled SPIRV shaders. Require path to Vulkan SDK." ON)
-option(OMM_STATIC_LIBRARY "build static lib" OFF)
+option(OMM_ENABLE_PRECOMPILED_SHADERS_DXIL "Embedded precompiled DXIL shaders. Require path to dxc.exe (normally located in Window SDK)." OFF)
+option(OMM_ENABLE_PRECOMPILED_SHADERS_SPIRV "Embedded precompiled SPIRV shaders. Require path to Vulkan SDK." OFF)
+option(OMM_STATIC_LIBRARY "build static lib" ON)
 option(OMM_CROSSCOMPILE_AARCH64 "cross compilation for aarch64" OFF)
 option(OMM_CROSSCOMPILE_X86_64 "cross compilation for x86_64" OFF)
 option(OMM_SHADER_DEBUG_INFO "enable embedded shader debug info" OFF)
-option(OMM_LIB_INSTALL "Generate install rules for OMM" ON)
+option(OMM_LIB_INSTALL "Generate install rules for OMM" OFF)
 option(OMM_ENABLE_FAST_MATH "Enable fast math optimizations()" ON)
 
 if (OMM_ENABLE_OPENMP)
