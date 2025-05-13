@@ -43,7 +43,7 @@ endif()
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-   
+
 if (NOT DEFINED OMM_PROJECT_FOLDER)
     set(OMM_PROJECT_FOLDER "Libraries")
 endif()
@@ -56,14 +56,4 @@ if (OMM_BUILD_VIEWER)
     add_subdirectory(tools/viewer)
 endif()
 
-if (OMM_ENABLE_TESTS)
-    add_subdirectory(support/tests)
-endif()
-
 add_subdirectory(support/scripts)
-
-if (OMM_BUILD_VIEWER)
-    set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT viewer)
-elseif(OMM_ENABLE_TESTS)
-    set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT tests)
-endif()
